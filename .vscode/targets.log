@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  2 08:25:58 2022
+# Make data base, printed on Fri Jun  3 08:28:26 2022
 
 # Variables
 
@@ -21,9 +21,9 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/adam/.gtkrc:/home/adam/.config/gtkrc
 # environment
-UUID = 57672b51-20f4-4a1c-ae42-c7b14c30d62c
+UUID = 44db3c14-bb9d-4e5b-98e0-67390a2dcca0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-bda69290-515a-4789-b6d6-fc3f919177bc.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d8cee3e0-e1d7-4664-8432-27d5624581a5.sock
 # environment
 LC_NAME = pl_PL.UTF-8
 # environment
@@ -47,7 +47,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/adam/Uczelnia/VISEM/KKD/L6
+PWD = /home/adam/L6
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -61,7 +61,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/adam/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/adam/.config/Code/CachedData/e18005f0f1b33c29e81d732535d8c0e47cafb0b5
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
@@ -75,7 +75,7 @@ XAUTHORITY = /home/adam/.Xauthority
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/adam/Uczelnia/VISEM/KKD/L6
+CURDIR := /home/adam/L6
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -107,13 +107,13 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 1553
+VSCODE_PID = 1047
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/adam-b550aoruselitev2:@/tmp/.ICE-unix/856,unix/adam-b550aoruselitev2:/tmp/.ICE-unix/856
+SESSION_MANAGER = local/adam-virtualbox:@/tmp/.ICE-unix/617,unix/adam-virtualbox:/tmp/.ICE-unix/617
 # automatic
 *F = $(notdir $*)
 # environment
@@ -137,9 +137,11 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/adam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+PATH = /home/adam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
 # default
 MAKEFILES := 
+# environment
+LANGUAGE = 
 # environment
 LC_MONETARY = pl_PL.UTF-8
 # environment
@@ -179,7 +181,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 739
+SYSTEMD_EXEC_PID = 503
 # environment
 DISPLAY = :0
 # environment
@@ -213,7 +215,7 @@ HOME = /home/adam
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-6339429b-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-6339429b-1.66.0-main.sock
 # environment
 XDG_SESSION_ID = 1
 # environment
@@ -231,7 +233,7 @@ QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # environment
 VSCODE_CLI = 1
 # environment
-TELEMETRY_ID = d9bbce3c-88f9-4edd-a746-166de6d23c4a
+TELEMETRY_ID = 0b9a2e4f-4b98-404f-a3c3-f0a85c786462
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
@@ -243,7 +245,7 @@ KDE_FULL_SESSION = true
 # environment
 LC_IDENTIFICATION = pl_PL.UTF-8
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=5/149=3%
+# Load=117/1024=11%, Rehash=0, Collisions=5/150=3%
 
 # Pattern-specific Variable Values
 
@@ -251,9 +253,9 @@ LC_IDENTIFICATION = pl_PL.UTF-8
 
 # Directories
 
-# . (device 2053, inode 9965115): 11 files, no impossibilities.
+# . (device 2049, inode 835767): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -272,11 +274,12 @@ runDefault:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 23:38:48.953308449
+#  Last modified 2022-06-02 13:44:32.786124604
 #  File has been updated.
 #  Successfully updated.
 
 clean:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -297,7 +300,6 @@ all: build
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
 run:
@@ -370,12 +372,13 @@ cleanO:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 160 B / avg = 7 B
-# current buf: size = 8162 B / used = 160 B / count = 22 / avg = 7 B
+ 
+# strcache buffers: 1 (0) / strings = 23 / storage = 165 B / avg = 7 B
+# current buf: size = 8162 B / used = 165 B / count = 23 / avg = 7 B
 
-# strcache performance: lookups = 43 / hit rate = 48%
+# strcache performance: lookups = 44 / hit rate = 47%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=0/43=0%
-# Finished Make data base on Thu Jun  2 08:25:58 2022
+# Load=23/8192=0%, Rehash=0, Collisions=0/44=0%
+# Finished Make data base on Fri Jun  3 08:28:26 2022
 
  

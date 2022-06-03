@@ -17,7 +17,7 @@ func TestScanFileHeader(t *testing.T) {
 	// assert.Equal(t, (d.Width), 134)
 	// assert.Equal(t, (d.Height), 201)
 	d.Decoder_decode()
-	file2, err2 := os.OpenFile("../../data/results/dec", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
+	file2, err2 := os.OpenFile("../../data/results/dec2", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
 	if err2 != nil {
 		os.Exit(1)
 	}

@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/adam/Uczelnia/VISEM/KKD/L6'
+make: Entering directory '/home/adam/L6'
 go build -o build/coder/coder cmd/coderMain/coderMain.go
-make: Leaving directory '/home/adam/Uczelnia/VISEM/KKD/L6'
+make: Leaving directory '/home/adam/L6'
  

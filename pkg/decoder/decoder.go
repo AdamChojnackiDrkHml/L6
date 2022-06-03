@@ -15,16 +15,16 @@ const (
 )
 
 type Decoder struct {
-	RgbBitMap  [][][3]int64
-	filterLow  [][3]int64
-	filterHigh [][3]int64
+	RgbBitMap  [][][3]uint8
+	filterLow  [][3]uint8
+	filterHigh [][3]uint8
 	Width      int
 	Height     int
 	q          *quantizer.Quantizer
 	Infile     []byte
 }
 
-func Decoder_createDecoder(bytes []byte, colors int64) *Decoder {
+func Decoder_createDecoder(bytes []byte, colors uint8) *Decoder {
 	decoder := &Decoder{}
 
 	//PLACEHOLDER
@@ -51,12 +51,12 @@ func Decoder_createDecoder(bytes []byte, colors int64) *Decoder {
 	decoder.Height, _ = strconv.Atoi(numString)
 	decoder.Infile = bytes
 
-	pixHighArray := make([][3]int64, 0)
-	pixLowArray := make([][3]int64, 0)
+	pixHighArray := make([][3]uint8, 0)
+	pixLowArray := make([][3]uint8, 0)
 
 	for i := 0; i < len(bytes); i += 6 {
-		pixLowArray = append(pixLowArray, [3]int64{int64(bytes[i]), int64(bytes[i+1]), int64(bytes[i+2])})
-		pixHighArray = append(pixHighArray, [3]int64{int64(bytes[i+3]), int64(bytes[i+4]), int64(bytes[i+5])})
+		pixLowArray = append(pixLowArray, [3]uint8{uint8(bytes[i]), uint8(bytes[i+1]), uint8(bytes[i+2])})
+		pixHighArray = append(pixHighArray, [3]uint8{uint8(bytes[i+3]), uint8(bytes[i+4]), uint8(bytes[i+5])})
 	}
 
 	decoder.filterLow = pixLowArray
@@ -72,7 +72,7 @@ func (d *Decoder) Decoder_decode() {
 }
 
 func (d *Decoder) diffDecode() {
-	pixels := make([][3]int64, len(d.filterLow))
+	pixels := make([][3]uint8, len(d.filterLow))
 	pixels[0] = d.filterLow[0]
 	for i := 1; i < len(pixels); i++ {
 		pixels[i][RED] = pixels[i-1][RED] + d.filterLow[i][RED]
@@ -85,7 +85,7 @@ func (d *Decoder) diffDecode() {
 
 func (d *Decoder) lowHighDecoding() {
 
-	decoded := make([][3]int64, d.Width*d.Height)
+	decoded := make([][3]uint8, d.Width*d.Height)
 	decoded[0][RED] = d.filterLow[0][RED] + d.filterHigh[0][RED]
 	decoded[0][GREEN] = d.filterLow[0][GREEN] + d.filterHigh[0][GREEN]
 	decoded[0][BLUE] = d.filterLow[0][BLUE] + d.filterHigh[0][BLUE]
@@ -100,14 +100,14 @@ func (d *Decoder) lowHighDecoding() {
 		decoded[(2*i)-1][BLUE] = d.filterLow[(i)][BLUE] - d.filterHigh[(i)][BLUE]
 	}
 	fmt.Println(len(decoded))
-	d.RgbBitMap = make([][][3]int64, d.Height)
+	d.RgbBitMap = make([][][3]uint8, d.Height)
 	for i := 0; i < d.Height; i++ {
-		d.RgbBitMap[i] = make([][3]int64, d.Width)
+		d.RgbBitMap[i] = make([][3]uint8, d.Width)
 		for j := 0; j < d.Width; j++ {
 			fmt.Println(i, j)
 			index := d.Width*i + j
 			r, g, b := decoded[index][RED], decoded[index][GREEN], decoded[index][BLUE]
-			d.RgbBitMap[i][j] = [3]int64{r, g, b}
+			d.RgbBitMap[i][j] = [3]uint8{r, g, b}
 		}
 	}
 }
