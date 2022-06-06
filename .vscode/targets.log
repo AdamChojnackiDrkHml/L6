@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Jun  3 08:28:26 2022
+# Make data base, printed on Mon Jun  6 16:24:48 2022
 
 # Variables
 
@@ -23,13 +24,19 @@ GTK_RC_FILES = /etc/gtk/gtkrc:/home/adam/.gtkrc:/home/adam/.config/gtkrc
 # environment
 UUID = 44db3c14-bb9d-4e5b-98e0-67390a2dcca0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d8cee3e0-e1d7-4664-8432-27d5624581a5.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-72c5d38b-041e-4109-8b26-5d02f9d27d9f.sock
+# environment
+KONSOLE_DBUS_SERVICE = :1.39
 # environment
 LC_NAME = pl_PL.UTF-8
 # environment
 LC_NUMERIC = pl_PL.UTF-8
 # environment
-VSCODE_CWD = /home/adam
+VSCODE_CWD = /home/adam/L6
+# environment
+WINDOWID = 65011719
+# environment
+LESS_TERMCAP_me = [0m
 # environment
 LC_ADDRESS = pl_PL.UTF-8
 # default
@@ -43,6 +50,8 @@ GOPATH = /home/adam/go
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
+KONSOLE_VERSION = 211203
+# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
@@ -54,6 +63,8 @@ PWD = /home/adam/L6
 MAIL = /var/spool/mail/adam
 # environment
 XDG_DATA_DIRS = /home/adam/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+OLDPWD = /home/adam
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -70,10 +81,16 @@ LANG = C
 XAUTHORITY = /home/adam/.Xauthority
 # default
 .LOADED := 
+# environment
+LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+COLORFGBG = 15;0
 # makefile
 MAKEFLAGS = pqrR
+# environment
+LESS_TERMCAP_so = [01;47;34m
 # makefile
 CURDIR := /home/adam/L6
 # environment
@@ -84,6 +101,8 @@ UTM_SOURCE = vscode
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# environment
+LESS_TERMCAP_ue = [0m
 # environment
 PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
@@ -97,6 +116,8 @@ XDG_CONFIG_DIRS = /home/adam/.config/kdedefaults:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
+P9K_SSH = 0
+# environment
 XCURSOR_THEME = breeze_cursors
 # environment
 XDG_SESSION_DESKTOP = KDE
@@ -107,13 +128,13 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 1047
+VSCODE_PID = 1605
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/adam-virtualbox:@/tmp/.ICE-unix/617,unix/adam-virtualbox:/tmp/.ICE-unix/617
+SESSION_MANAGER = local/adam-virtualbox:@/tmp/.ICE-unix/647,unix/adam-virtualbox:/tmp/.ICE-unix/647
 # automatic
 *F = $(notdir $*)
 # environment
@@ -123,21 +144,30 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
+P9K_TTY = old
+# environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile
 SHELL = /bin/sh
+# environment
+ 
+LESS_TERMCAP_us = [01;36m
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 2
+# environment
+PROFILEHOME = 
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
 PATH = /home/adam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+# environment
+LESS_TERMCAP_se = [0m
 # default
 MAKEFILES := 
 # environment
@@ -150,6 +180,8 @@ MOTD_SHOWN = pam
 ^F = $(notdir $^)
 # environment
 LC_TIME = pl_PL.UTF-8
+# environment
+LESS_TERMCAP_mb = [01;32m
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -164,10 +196,14 @@ KDE_APPLICATIONS_AS_SCOPE = 1
 XDG_SEAT = seat0
 # environment
 XDG_CURRENT_DESKTOP = KDE
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # automatic
 +F = $(notdir $+)
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+LESS = -R
 # environment
 DESKTOP_SESSION = plasma
 # environment
@@ -181,7 +217,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 503
+SYSTEMD_EXEC_PID = 494
 # environment
 DISPLAY = :0
 # environment
@@ -193,6 +229,8 @@ MAKE_VERSION := 4.3
 # environment
 KDE_SESSION_UID = 1000
 # environment
+KONSOLE_DBUS_SESSION = /Sessions/1
+# environment
 LC_MEASUREMENT = pl_PL.UTF-8
 # environment
 _ = /usr/bin/make
@@ -200,6 +238,8 @@ _ = /usr/bin/make
 LC_PAPER = pl_PL.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
+# environment
+COLORTERM = truecolor
 # environment
 GOMODCACHE = /home/adam/go/pkg/mod
 # environment
@@ -217,6 +257,8 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-6339429b-1.66.0-main.sock
 # environment
+TERM = xterm-256color
+# environment
 XDG_SESSION_ID = 1
 # environment
 XCURSOR_SIZE = 24
@@ -231,11 +273,18 @@ SUFFIXES :=
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # environment
+_P9K_TTY = /dev/pts/1
+# environment
 VSCODE_CLI = 1
 # environment
 TELEMETRY_ID = 0b9a2e4f-4b98-404f-a3c3-f0a85c786462
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+LS_OPTIONS = --color=auto
+# environment
+SHELL_SESSION_ID = 1ad3e986bc354ee29eacb021ce12be2f
+ 
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -243,9 +292,11 @@ KDE_SESSION_VERSION = 5
 # environment
 KDE_FULL_SESSION = true
 # environment
+PKGFILE_PROMPT_INSTALL_MISSING = 1
+# environment
 LC_IDENTIFICATION = pl_PL.UTF-8
 # variable set hash-table stats:
-# Load=117/1024=11%, Rehash=0, Collisions=5/150=3%
+# Load=141/1024=14%, Rehash=0, Collisions=17/174=10%
 
 # Pattern-specific Variable Values
 
@@ -253,9 +304,9 @@ LC_IDENTIFICATION = pl_PL.UTF-8
 
 # Directories
 
-# . (device 2049, inode 835767): 12 files, no impossibilities.
+# . (device 2049, inode 835767): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -268,23 +319,22 @@ runDefault:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
-	@./build/coder/coder data/input/testy4/example0.tga data/output/def 7
+#  recipe to execute (from 'Makefile', line 15):
+	@./build/coder/coder data/input/testy4/example0.tga data/output/def 2
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-02 13:44:32.786124604
+#  Last modified 2022-06-03 09:17:18.135359653
 #  File has been updated.
 #  Successfully updated.
 
 clean:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
+#  recipe to execute (from 'Makefile', line 27):
 	@rm build/coder/*
 
 # Not a target:
@@ -307,7 +357,7 @@ run:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
+#  recipe to execute (from 'Makefile', line 12):
 	@./build/coder/coder $(IN) $(OUT) $(NUM)
 
 build:
@@ -338,11 +388,18 @@ build:
 #  recipe to execute (from 'Makefile', line 6):
 	@go build -o build/coder/coder cmd/coderMain/coderMain.go
 
+runDefaultSC:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	@./build/statsChecker/statsChecker
+
 runTest:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
+#  recipe to execute (from 'Makefile', line 21):
 	@./build/coder/coder
 
 # Not a target:
@@ -361,24 +418,30 @@ cleanO:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
+#  recipe to execute (from 'Makefile', line 24):
 	@rm data/output/*
 
+buildSC:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 9):
+	@go build -o  build/statsChecker/statsChecker cmd/statCheckerMain/statCheckerMain.go
+
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/34=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/36=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
- 
-# strcache buffers: 1 (0) / strings = 23 / storage = 165 B / avg = 7 B
-# current buf: size = 8162 B / used = 165 B / count = 23 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 193 B / avg = 7 B
+# current buf: size = 8162 B / used = 193 B / count = 26 / avg = 7 B
 
-# strcache performance: lookups = 44 / hit rate = 47%
+# strcache performance: lookups = 49 / hit rate = 46%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=0/44=0%
-# Finished Make data base on Fri Jun  3 08:28:26 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/49=0%
+# Finished Make data base on Mon Jun  6 16:24:48 2022
 
  

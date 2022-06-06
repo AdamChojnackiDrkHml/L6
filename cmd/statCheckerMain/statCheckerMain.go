@@ -8,6 +8,18 @@ import (
 
 func main() {
 	fmt.Println(os.Getwd())
-	statschecker.CheckStat("data/input/testy4/example0.tga", "data/results/dec2")
+
+	fmt.Println(os.Getwd())
+	var inPath string
+	var outPath string
+	if len(os.Args) < 3 {
+		inPath = "../../data/output/def"
+		outPath = "../../data/results/decoded"
+	} else {
+		inPath = os.Args[1]
+		outPath = os.Args[2]
+
+	}
+	statschecker.CheckStat(inPath, outPath)
 
 }

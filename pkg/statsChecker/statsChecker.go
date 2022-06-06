@@ -2,7 +2,6 @@ package statschecker
 
 import (
 	"fmt"
-	"image/jpeg"
 	"math"
 	"os"
 
@@ -41,7 +40,7 @@ func CheckStat(originPath, decodedPath string) {
 		os.Exit(1)
 	}
 
-	bitmap, err2 = jpeg.Decode(file)
+	bitmap, err2 = tga.Decode(file)
 
 	if err2 != nil {
 		os.Exit(1)
@@ -53,7 +52,9 @@ func CheckStat(originPath, decodedPath string) {
 
 		for j := 0; j < bitmap.Bounds().Max.X; j++ {
 			r, g, b, _ := bitmap.At(j, i).RGBA()
-			fmt.Println(r/256, g/256, b/256)
+			if i == 0 && j == 0 {
+				fmt.Println(r/256, g/256, b/256)
+			}
 
 			decodedBitmap[i][j] = [3]uint8{uint8(r / 256), uint8(g / 256), uint8(b / 256)}
 		}
@@ -77,11 +78,27 @@ func MseSingleCol(originBitmap, decodedBitmap [][][3]uint8, colorBit uint8) floa
 	sum := 0.0
 	for i := 0; i < len(originBitmap); i++ {
 		for j := 0; j < len(originBitmap[0]); j++ {
-			sum += math.Abs(float64(originBitmap[i][j][colorBit] - decodedBitmap[i][j][colorBit]))
+			sum += math.Abs(float64(originBitmap[i][j][colorBit]-decodedBitmap[i][j][colorBit])) * math.Abs(float64(originBitmap[i][j][colorBit]-decodedBitmap[i][j][colorBit]))
 		}
 	}
 
 	return sum
+}
+
+func AAA(originBitmap, decodedBitmap [][][3]uint8) {
+	mse := Mse(originBitmap, decodedBitmap)
+	mseR := MseSingleCol(originBitmap, decodedBitmap, 0)
+	mseG := MseSingleCol(originBitmap, decodedBitmap, 1)
+	mseB := MseSingleCol(originBitmap, decodedBitmap, 2)
+
+	snr := Snr(mse, originBitmap)
+
+	fmt.Println("MSE := ", mse)
+	fmt.Println("MSER := ", mseR)
+	fmt.Println("MSEG := ", mseG)
+	fmt.Println("MSEB := ", mseB)
+	fmt.Println("SNR := ", snr)
+
 }
 
 func Mse(originBitmap, decodedBitmap [][][3]uint8) float64 {
@@ -112,7 +129,7 @@ func taxicab(vec1, vec2 [3]uint8) float64 {
 	vec2F := []float64{float64(vec2[0]), float64(vec2[1]), float64(vec2[2])}
 
 	for i := range vec1F {
-		sum += math.Abs(vec1F[i] - vec2F[i])
+		sum += math.Abs(vec1F[i]-vec2F[i]) * math.Abs(vec1F[i]-vec2F[i])
 	}
 
 	return sum

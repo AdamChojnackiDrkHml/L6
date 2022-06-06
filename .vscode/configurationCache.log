@@ -1,1 +1,1 @@
-{"buildTargets":["all","build","clean","cleanO","run","runDefault","runTest"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all","build","buildSC","clean","cleanO","run","runDefault","runDefaultSC","runTest"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

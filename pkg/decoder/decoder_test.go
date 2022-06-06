@@ -2,10 +2,12 @@ package decoder
 
 import (
 	"fmt"
-	"image/jpeg"
 	"io/ioutil"
+	statschecker "l6/pkg/statsChecker"
 	"os"
 	"testing"
+
+	"github.com/ftrvxmtrx/tga"
 )
 
 func TestScanFileHeader(t *testing.T) {
@@ -13,7 +15,7 @@ func TestScanFileHeader(t *testing.T) {
 	fmt.Println(os.Getwd())
 	byt, _ := ioutil.ReadFile("../../data/output/def")
 
-	d := Decoder_createDecoder(byt, 7)
+	d := Decoder_createDecoder(byt)
 	// assert.Equal(t, (d.Width), 134)
 	// assert.Equal(t, (d.Height), 201)
 	d.Decoder_decode()
@@ -22,10 +24,31 @@ func TestScanFileHeader(t *testing.T) {
 		os.Exit(1)
 	}
 	defer file2.Close()
+	file3, err3 := os.Open("../../data/input/testy4/example0.tga")
 
-	opt := jpeg.Options{
-		Quality: 100,
+	if err3 != nil {
+		os.Exit(1)
 	}
 
-	jpeg.Encode(file2, d.Decoder_getImage(), &opt)
+	bitmap, err4 := tga.Decode(file3)
+	if err4 != nil {
+		os.Exit(1)
+	}
+
+	rgbBitMap := make([][][3]uint8, bitmap.Bounds().Max.Y)
+	for i := 0; i < bitmap.Bounds().Max.Y; i++ {
+		rgbBitMap[i] = make([][3]uint8, bitmap.Bounds().Max.X)
+
+		for j := 0; j < bitmap.Bounds().Max.X; j++ {
+			r, g, b, _ := bitmap.At(j, i).RGBA()
+			rgbBitMap[i][j] = [3]uint8{uint8(r / 256), uint8(g / 256), uint8(b / 256)}
+		}
+	}
+
+	statschecker.AAA(rgbBitMap, d.RgbBitMap)
+	// opt := jpeg.Options{
+	// 	Quality: 100,
+	// }
+	img := d.Decoder_getImage()
+	tga.Encode(file2, img)
 }

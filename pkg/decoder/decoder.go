@@ -24,7 +24,7 @@ type Decoder struct {
 	Infile     []byte
 }
 
-func Decoder_createDecoder(bytes []byte, colors uint8) *Decoder {
+func Decoder_createDecoder(bytes []byte) *Decoder {
 	decoder := &Decoder{}
 
 	//PLACEHOLDER
@@ -104,7 +104,6 @@ func (d *Decoder) lowHighDecoding() {
 	for i := 0; i < d.Height; i++ {
 		d.RgbBitMap[i] = make([][3]uint8, d.Width)
 		for j := 0; j < d.Width; j++ {
-			fmt.Println(i, j)
 			index := d.Width*i + j
 			r, g, b := decoded[index][RED], decoded[index][GREEN], decoded[index][BLUE]
 			d.RgbBitMap[i][j] = [3]uint8{r, g, b}
@@ -120,14 +119,14 @@ func (d *Decoder) Decoder_getImage() image.Image {
 	upLeft := image.Point{0, 0}
 	lowRight := image.Point{width, height}
 
-	img := image.NewRGBA(image.Rectangle{upLeft, lowRight})
+	img := image.NewNRGBA(image.Rectangle{upLeft, lowRight})
 
 	for i := 0; i < int(height); i++ {
 		for j := 0; j < int(width); j++ {
-			pixcols := d.RgbBitMap[i][j]
-			col := color.RGBA{uint8(pixcols[RED]), uint8(pixcols[GREEN]), uint8(pixcols[BLUE]), 0.0}
-			img.Set(j, i, col)
 
+			pixcols := d.RgbBitMap[i][j]
+			col := color.NRGBA{uint8(pixcols[RED]), uint8(pixcols[GREEN]), uint8(pixcols[BLUE]), 255.0}
+			img.Set(j, i, col)
 		}
 
 	}

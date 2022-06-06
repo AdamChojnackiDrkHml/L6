@@ -1,9 +1,13 @@
 #!/bin/bash
-rm data/results/*
-rm data/output/*
+# rm -rf data/results/*/*
+# rm -rf data/output/*/*
 make
-for i in {0..24}
+for j in {0..3}
 do
-    echo "$i"
-    ./build/coder/coder data/input/testy4/example0.tga "data/output/test$i.tga" "$i" > "data/results/res$i.txt"
+    for i in {1..7}
+    do
+        ./build/coder/coder "data/input/testy4/example$j.tga" "data/output/test$j/var$i" "$i"
+        ./build/decoder/decoder "data/output/test$j/var$i" "data/results/test$j/var$i"
+        ./build/statsChecker/statsChecker "data/input/testy4/example$j.tga" "data/results/test$j/var$i" > "data/sc/test$j/var$i"
+    done
 done
